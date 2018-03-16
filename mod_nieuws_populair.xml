@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1" client="site" method="upgrade">
+	<name>Populair nieuws</name>
+	<author>Tristan de Boer</author>
+	<creationDate>16 maar 2017</creationDate>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>info@tristandeboer.nl</authorEmail>
+	<authorUrl>www.tristandeboer.nl</authorUrl>
+	<version>1.0.0</version>
+	<description>
+
+	</description>
+	<files>
+		<filename module="mod_nieuws_populair">mod_nieuws_populair.php</filename>
+		<folder>tmpl</folder>
+		<filename>helper.php</filename>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="catid"
+					type="category"
+					label="JCATEGORY"
+					description="Category"
+					extension="com_content"
+					multiple="true"
+					size="10"
+					default=""
+					>
+					<option value="">JOPTION_ALL_CATEGORIES</option>
+				</field>
+
+				<field
+					name="count"
+					type="number"
+					label="Aantal artikelen"
+					description="Aantal artikelen"
+					default="5"
+				/>
+
+				<field
+					name="show_front"
+					type="radio"
+					label="Toon featured"
+					description="Toon featured"
+					class="btn-group btn-group-yesno"
+					default="1"
+					>
+					<option value="1">JSHOW</option>
+					<option value="0">JHIDE</option>
+				</field>
+
+				<field
+					name="basicspacer1"
+					type="spacer"
+					hr="true"
+				/>
+
+				<field
+					name="date_filtering"
+					type="list"
+					label="Datum filtering"
+					description="Datum filtering"
+					default="off"
+					>
+					<option value="off">Uit</option>
+					<option value="range">Waarde</option>
+					<option value="relative">Relatieve dag</option>
+				</field>
+
+				<field
+					name="date_field"
+					type="list"
+					label="Op veld"
+					description="Op veld"
+					default="a.created"
+					showon="date_filtering:range,relative"
+					>
+					<option value="a.created">Aangemaakt</option>
+					<option value="a.modified">Aangepast</option>
+					<option value="a.publish_up">Gepubliceerd</option>
+				</field>
+
+				<field
+					name="start_date_range"
+					type="calendar"
+					label="Startdatum"
+					description="Startdatum"
+					translateformat="true"
+					showtime="true"
+					size="22"
+					filter="user_utc"
+					showon="date_filtering:range"
+				/>
+
+				<field
+					name="end_date_range"
+					type="calendar"
+					label="Einddatum"
+					description="Einddatum"
+					translateformat="true"
+					showtime="true"
+					size="22"
+					filter="user_utc"
+					showon="date_filtering:range"
+				/>
+
+				<field
+					name="relative_date"
+					type="number"
+					label="Relatieve datum"
+					description="Relatieve datum"
+					default="30"
+					showon="date_filtering:relative"
+				/>
+			</fieldset>
+
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC"
+				/>
+
+				<field
+					name="moduleclass_sfx"
+					type="textarea"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"
+					rows="3"
+				/>
+
+				<field
+					name="cache"
+					type="list"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC"
+					default="1"
+					>
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="number"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC"
+					default="900"
+				/>
+
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static"
+					>
+					<option value="static"></option>
+				</field>
+
+			</fieldset>
+		</fields>
+	</config>
+</extension>

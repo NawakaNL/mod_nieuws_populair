@@ -1,0 +1,38 @@
+.populair-nieuws > .populair-nieuws-title {
+  background: none;
+  background-color: #010050;
+  font-weight: bold;
+  color: white;
+  padding: 5px 10px
+}
+
+.populair-nieuws > .populair-nieuws-content {
+  border: 1px solid #a8c7e0;
+  border-top: none;
+}
+
+.populair-nieuws ul {
+  margin: 0 0 0 0 !important;
+}
+
+.populair-nieuws ul li {
+  padding-left: 0px;
+}
+
+.populair-nieuws ul li a {
+  background-image: none !important;
+  padding: 10px 0px !important;
+  margin: 0px 0px !important;
+  max-height: 40px;
+}
+
+.populair-nieuws ul li a:hover {
+  color: #1a268d !important;
+  text-decoration: underline !important;
+}
+
+.populair-nieuws ul li a span.label {
+  font-size: 12px;
+  float: right !important;
+  margin-right: 5px;
+}
