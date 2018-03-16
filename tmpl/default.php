@@ -21,7 +21,7 @@ defined('_JEXEC') or die;
 					<span itemprop="name">
 						<?php echo $item->title; ?>
 					</span>
-					<span class="label label-default"><?php echo $item->hits;?> hits</span>
+					
 				</a>
 			</li>
 		<?php endforeach; ?>
